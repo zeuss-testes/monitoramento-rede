@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Monitor Dados Móveis</string>
+    <string name="usage_permission_title">Conceda acesso ao uso</string>
+    <string name="usage_permission_message">Precisamos da permissão "Acesso a uso" para acompanhar quanto cada rede está consumindo no dispositivo.</string>
+    <string name="open_settings">Abrir configurações</string>
+    <string name="refresh">Atualizar</string>
+    <string name="today">Hoje</string>
+    <string name="last_7_days">7 dias</string>
+    <string name="last_30_days">30 dias</string>
+    <string name="mobile_data">Dados móveis</string>
+    <string name="wifi_data">Wi‑Fi</string>
+    <string name="upload">Envio</string>
+    <string name="download">Recepção</string>
+    <string name="total">Total</string>
+    <string name="permission_phone_message">Conceda a permissão de telefone para diferenciar o consumo da linha de dados móveis.</string>
+    <string name="grant_permission">Permitir</string>
+    <string name="permission_phone_title">Permissão de telefone</string>
+    <string name="permission_denied">Permissão negada. Ajuste nas configurações do dispositivo.</string>
+    <string name="usage_card_description">Resumo do consumo do período selecionado.</string>
+    <string name="usage_last_update">Atualizado %1$s</string>
+</resources>

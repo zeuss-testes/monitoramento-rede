@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-mergeDebugResources-67:\\layout\\activity_password.xml",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-mergeDebugResources-67:\\layout\\item_app_limit.xml",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\item_app_limit.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-mergeDebugResources-67:\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-mergeDebugResources-67:\\layout\\activity_employee_setup.xml",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_employee_setup.xml"
+    },
+    {
+        "merged": "com.example.mobiledatamonitor.app-mergeDebugResources-67:/layout/activity_employee_setup.xml",
+        "source": "com.example.mobiledatamonitor.app-main-70:/layout/activity_employee_setup.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-mergeDebugResources-67:\\layout\\activity_edit_app_limit.xml",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_edit_app_limit.xml"
+    }
+]

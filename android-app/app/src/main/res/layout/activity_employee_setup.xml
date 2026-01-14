@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_gradient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="24dp"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@drawable/bg_surface_card">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastro de funcionário"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Informe os dados do colaborador deste aparelho"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/employee_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Nome completo"
+            android:inputType="textPersonName"
+            android:background="@android:color/transparent"
+            android:textColor="@color/md_theme_onSurface"
+            android:textColorHint="@color/md_theme_outline"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/employee_email_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:background="@android:color/transparent"
+            android:textColor="@color/md_theme_onSurface"
+            android:textColorHint="@color/md_theme_outline"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/employee_phone_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Telefone"
+            android:inputType="phone"
+            android:background="@android:color/transparent"
+            android:textColor="@color/md_theme_onSurface"
+            android:textColorHint="@color/md_theme_outline"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/employee_imei_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="IMEI"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/employee_imei_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="IMEI (opcional - deixe em branco para usar automático)"
+            android:inputType="text"
+            android:background="@android:color/transparent"
+            android:textColor="@color/md_theme_onSurface"
+            android:textColorHint="@color/md_theme_outline"
+            android:padding="12dp" />
+
+        <RadioGroup
+            android:id="@+id/employee_role_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:id="@+id/role_common"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Usuário comum"
+                android:textColor="@color/md_theme_onSurface" />
+
+            <RadioButton
+                android:id="@+id/role_admin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Admin"
+                android:textColor="@color/md_theme_onSurface" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/save_employee_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Salvar e continuar" />
+
+    </LinearLayout>
+
+</FrameLayout>

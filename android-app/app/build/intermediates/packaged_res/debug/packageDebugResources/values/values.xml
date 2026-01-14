@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#1A1A2E</color>
+    <color name="md_theme_background">#000000</color>
+    <color name="md_theme_onBackground">#F8FAFF</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_onPrimaryContainer">#D7E2FF</color>
+    <color name="md_theme_onSecondary">#0F1729</color>
+    <color name="md_theme_onSurface">#F8FAFF</color>
+    <color name="md_theme_outline">#4C5A75</color>
+    <color name="md_theme_primary">#3677F8</color>
+    <color name="md_theme_primaryContainer">#16316C</color>
+    <color name="md_theme_secondary">#FFB347</color>
+    <color name="md_theme_surface">#11213D</color>
+    <color name="md_theme_surfaceVariant">#1B2D4E</color>
+    <string name="app_name">Monitor Dados Móveis</string>
+    <string name="download">Recepção</string>
+    <string name="grant_permission">Permitir</string>
+    <string name="last_30_days">30 dias</string>
+    <string name="last_7_days">7 dias</string>
+    <string name="mobile_data">Dados móveis</string>
+    <string name="open_settings">Abrir configurações</string>
+    <string name="permission_denied">Permissão negada. Ajuste nas configurações do dispositivo.</string>
+    <string name="permission_phone_message">Conceda a permissão de telefone para diferenciar o consumo da linha de dados móveis.</string>
+    <string name="permission_phone_title">Permissão de telefone</string>
+    <string name="refresh">Atualizar</string>
+    <string name="today">Hoje</string>
+    <string name="total">Total</string>
+    <string name="upload">Envio</string>
+    <string name="usage_card_description">Resumo do consumo do período selecionado.</string>
+    <string name="usage_last_update">Atualizado %1$s</string>
+    <string name="usage_permission_message">Precisamos da permissão "Acesso a uso" para acompanhar quanto cada rede está consumindo no dispositivo.</string>
+    <string name="usage_permission_title">Conceda acesso ao uso</string>
+    <string name="wifi_data">Wi‑Fi</string>
+    <style name="Theme.MobileDataMonitor" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>
