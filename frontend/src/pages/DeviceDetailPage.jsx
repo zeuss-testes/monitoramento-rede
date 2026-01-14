@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import dayjs from 'dayjs';
-import { getDeviceDetails, deleteDevice } from '../api/devices.js';
+import { getDeviceDetails, deleteDevice, getDeviceHistory } from '../api/devices.js';
 import SectionHeader from '../components/SectionHeader.jsx';
 import Button from '../components/Button.jsx';
 import LoadingState from '../components/LoadingState.jsx';
@@ -22,7 +22,14 @@ function DeviceDetailPage() {
     enabled: Boolean(deviceId),
   });
 
+  const historyQuery = useQuery({
+    queryKey: ['deviceHistory', deviceId],
+    queryFn: () => getDeviceHistory(deviceId),
+    enabled: Boolean(deviceId),
+  });
+
   const device = deviceQuery.data;
+  const history = historyQuery.data?.historico || [];
 
   const deleteMutation = useMutation({
     mutationFn: () => deleteDevice(deviceId),
@@ -382,6 +389,57 @@ function DeviceDetailPage() {
           </div>
         </div>
       )}
+
+      {/* Histórico Mensal (Snapshots) */}
+      <div>
+        <h3 className="text-xl font-semibold text-white mb-6">Histórico Mensal (Consumo Fechado)</h3>
+        {history.length > 0 ? (
+          <div className="rounded-2xl border border-white/5 bg-white/5 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-white/5">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-white/40 uppercase tracking-wider">
+                      Mês/Ano
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-white/40 uppercase tracking-wider">
+                      Consumo Total
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-white/40 uppercase tracking-wider">
+                      Descrição
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-white/40 uppercase tracking-wider">
+                      Gerado em
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/10">
+                  {history.map((entry, index) => (
+                    <tr key={index} className="hover:bg-white/5 transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
+                        {dayjs(entry.data).format('MM/YYYY')}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-white">
+                        {formatMegabytes(entry.megabytes)}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-white/80">
+                        {entry.description}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-white/60">
+                        {dayjs(entry.geradoEm).format('DD/MM/YYYY HH:mm')}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ) : (
+          <div className="rounded-2xl border border-white/5 bg-white/5 p-12 text-center">
+            <p className="text-white/60">Nenhum histórico mensal disponível ainda. Os snapshots são gerados ao final de cada mês.</p>
+          </div>
+        )}
+      </div>
 
       <Modal open={isDeleteModalOpen} onClose={() => setDeleteModalOpen(false)} title="Remover dispositivo">
         <div className="space-y-6 text-white/80">

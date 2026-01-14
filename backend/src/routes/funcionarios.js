@@ -1,8 +1,12 @@
 const express = require('express');
 const dayjs = require('dayjs');
 const { all, get } = require('../db');
+const { setupMigrationRoutes } = require('../services/monthlyMigration');
 
 const router = express.Router();
+
+// Configurar rotas de migração mensal
+setupMigrationRoutes(router);
 
 // Lista funcionários (registros_usuarios) com soma de uso
 router.get('/', async (_req, res, next) => {
@@ -408,6 +412,34 @@ router.get('/:imei/details', async (req, res, next) => {
     }
 
     res.json(responseData);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// Histórico mensal de um dispositivo via usage_logs (snapshots)
+router.get('/:imei/historico', async (req, res, next) => {
+  try {
+    const { imei } = req.params;
+
+    const historico = await all(
+      `SELECT recorded_at, megabytes, description, created_at
+       FROM usage_logs
+       WHERE imei = ? AND network_type = 'MONTHLY_SNAPSHOT'
+       ORDER BY recorded_at DESC
+       LIMIT 24`,
+      [imei]
+    );
+
+    res.json({
+      imei,
+      historico: historico.map(entry => ({
+        data: entry.recorded_at,
+        megabytes: Number(entry.megabytes),
+        description: entry.description,
+        geradoEm: entry.created_at
+      }))
+    });
   } catch (error) {
     next(error);
   }

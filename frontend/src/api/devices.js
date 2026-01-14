@@ -8,6 +8,9 @@ export const getDeviceUsage = (deviceId, params = {}) =>
 export const getDeviceDetails = (deviceId) =>
   api.get(`/funcionarios/${deviceId}/details`).then((res) => res.data);
 
+export const getDeviceHistory = (deviceId) =>
+  api.get(`/funcionarios/${deviceId}/historico`).then((res) => res.data);
+
 export const createDevice = (payload) => api.post('/devices', payload).then((res) => res.data);
 
 export const updateDevice = (deviceId, payload) =>
