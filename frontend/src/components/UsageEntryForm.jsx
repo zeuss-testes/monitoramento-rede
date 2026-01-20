@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from './Button.jsx';
+import { FiDatabase, FiWifi, FiClock, FiFileText } from 'react-icons/fi';
 
 const networkOptions = ['4G', '5G', 'LTE', '3G', 'WI-FI'];
 
@@ -30,9 +31,12 @@ function UsageEntryForm({ onSubmit, onCancel, submitting }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="flex flex-col gap-2 text-sm text-white/70">
-          <span className="font-medium text-white">Consumo registrado (MB)</span>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <label className="flex flex-col gap-2 text-sm">
+          <span className="font-semibold text-ghost flex items-center gap-2">
+            <FiDatabase className="text-cyber-400" size={14} />
+            Consumo registrado (MB)
+          </span>
           <input
             required
             type="number"
@@ -42,47 +46,56 @@ function UsageEntryForm({ onSubmit, onCancel, submitting }) {
             value={form.megabytes}
             onChange={handleChange}
             placeholder="Ex: 512"
-            className="rounded-xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white focus:border-primary-400 focus:outline-none"
+            className="rounded-xl border border-cyber-400/20 bg-space/80 px-4 py-3 text-ghost placeholder:text-steel focus:border-cyber-400 focus:outline-none focus:ring-1 focus:ring-cyber-400/30 transition-all font-mono"
           />
         </label>
-        <label className="flex flex-col gap-2 text-sm text-white/70">
-          <span className="font-medium text-white">Rede</span>
+        <label className="flex flex-col gap-2 text-sm">
+          <span className="font-semibold text-ghost flex items-center gap-2">
+            <FiWifi className="text-cyber-400" size={14} />
+            Rede
+          </span>
           <select
             name="networkType"
             value={form.networkType}
             onChange={handleChange}
-            className="rounded-xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white focus:border-primary-400 focus:outline-none"
+            className="rounded-xl border border-cyber-400/20 bg-space/80 px-4 py-3 text-ghost focus:border-cyber-400 focus:outline-none focus:ring-1 focus:ring-cyber-400/30 transition-all"
           >
             {networkOptions.map((option) => (
-              <option key={option} value={option}>
+              <option key={option} value={option} className="bg-space">
                 {option}
               </option>
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-2 text-sm text-white/70">
-          <span className="font-medium text-white">Data e hora</span>
+        <label className="flex flex-col gap-2 text-sm">
+          <span className="font-semibold text-ghost flex items-center gap-2">
+            <FiClock className="text-cyber-400" size={14} />
+            Data e hora
+          </span>
           <input
             type="datetime-local"
             name="recordedAt"
             value={form.recordedAt}
             onChange={handleChange}
-            className="rounded-xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white focus:border-primary-400 focus:outline-none"
+            className="rounded-xl border border-cyber-400/20 bg-space/80 px-4 py-3 text-ghost focus:border-cyber-400 focus:outline-none focus:ring-1 focus:ring-cyber-400/30 transition-all font-mono"
           />
         </label>
-        <label className="flex flex-col gap-2 text-sm text-white/70 sm:col-span-2">
-          <span className="font-medium text-white">Descrição</span>
+        <label className="flex flex-col gap-2 text-sm sm:col-span-2">
+          <span className="font-semibold text-ghost flex items-center gap-2">
+            <FiFileText className="text-cyber-400" size={14} />
+            Descrição
+          </span>
           <textarea
             name="description"
             value={form.description}
             onChange={handleChange}
             rows="3"
             placeholder="Ex: Atualização do app de campo"
-            className="rounded-xl border border-white/10 bg-slate-950/60 px-4 py-3 text-white focus:border-primary-400 focus:outline-none"
+            className="rounded-xl border border-cyber-400/20 bg-space/80 px-4 py-3 text-ghost placeholder:text-steel focus:border-cyber-400 focus:outline-none focus:ring-1 focus:ring-cyber-400/30 transition-all resize-none"
           />
         </label>
       </div>
-      <div className="flex justify-end gap-3">
+      <div className="flex justify-end gap-3 pt-4 border-t border-cyber-400/10">
         <Button variant="ghost" type="button" onClick={onCancel} disabled={submitting}>
           Cancelar
         </Button>

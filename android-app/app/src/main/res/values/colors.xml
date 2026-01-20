@@ -1,14 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="md_theme_primary">#3677F8</color>
-    <color name="md_theme_onPrimary">#FFFFFF</color>
-    <color name="md_theme_primaryContainer">#16316C</color>
-    <color name="md_theme_onPrimaryContainer">#D7E2FF</color>
-    <color name="md_theme_secondary">#FFB347</color>
-    <color name="md_theme_onSecondary">#0F1729</color>
-    <color name="md_theme_background">#000000</color>
-    <color name="md_theme_onBackground">#F8FAFF</color>
-    <color name="md_theme_surface">#11213D</color>
-    <color name="md_theme_onSurface">#F8FAFF</color>
-    <color name="md_theme_surfaceVariant">#1B2D4E</color>
-    <color name="md_theme_outline">#4C5A75</color>
+    <!-- Core Backgrounds (matching dashboard) -->
+    <color name="void_black">#0A0E17</color>
+    <color name="deep_space">#0F1628</color>
+    <color name="midnight_blue">#151D35</color>
+    <color name="abyss">#1A2342</color>
+    
+    <!-- Primary - Electric Cyan (matching dashboard cyber scale) -->
+    <color name="cyber_50">#E6FDFF</color>
+    <color name="cyber_100">#B3F8FF</color>
+    <color name="cyber_200">#66F1FF</color>
+    <color name="cyber_300">#1AE8FF</color>
+    <color name="cyber_400">#00D4FF</color>
+    <color name="cyber_500">#00B8DB</color>
+    <color name="cyber_600">#0094B8</color>
+    <color name="cyber_700">#006B8A</color>
+    
+    <!-- Status Colors (matching dashboard) -->
+    <color name="pulse_green">#00FF88</color>
+    <color name="pulse_green_dim">#00CC6A</color>
+    <color name="warning_amber">#FFAA00</color>
+    <color name="warning_amber_dim">#CC8800</color>
+    <color name="danger_red">#FF3366</color>
+    <color name="danger_red_dim">#CC2952</color>
+    
+    <!-- Text Colors (matching dashboard ghost/steel/mist) -->
+    <color name="ghost_white">#E8F4FF</color>
+    <color name="steel_gray">#5A6A8A</color>
+    <color name="mist_gray">#8899BB</color>
+    
+    <!-- Transparent variants for overlays (matching dashboard opacity levels) -->
+    <color name="cyber_400_05">#0D00D4FF</color>
+    <color name="cyber_400_10">#1A00D4FF</color>
+    <color name="cyber_400_15">#2600D4FF</color>
+    <color name="cyber_400_20">#3300D4FF</color>
+    <color name="cyber_400_25">#4000D4FF</color>
+    <color name="cyber_400_30">#4D00D4FF</color>
+    
+    <color name="pulse_green_10">#1A00FF88</color>
+    <color name="pulse_green_20">#3300FF88</color>
+    <color name="pulse_green_30">#4D00FF88</color>
+    
+    <!-- Glass card background colors -->
+    <color name="glass_card_bg">#CC0F1628</color>
+    <color name="glass_card_border">#1A00D4FF</color>
+    
+    <!-- Material Theme Colors (mapped to new palette) -->
+    <color name="md_theme_primary">@color/cyber_400</color>
+    <color name="md_theme_onPrimary">@color/void_black</color>
+    <color name="md_theme_primaryContainer">@color/cyber_700</color>
+    <color name="md_theme_onPrimaryContainer">@color/cyber_100</color>
+    <color name="md_theme_secondary">@color/pulse_green</color>
+    <color name="md_theme_onSecondary">@color/void_black</color>
+    <color name="md_theme_background">@color/void_black</color>
+    <color name="md_theme_onBackground">@color/ghost_white</color>
+    <color name="md_theme_surface">@color/deep_space</color>
+    <color name="md_theme_onSurface">@color/ghost_white</color>
+    <color name="md_theme_surfaceVariant">@color/midnight_blue</color>
+    <color name="md_theme_outline">@color/steel_gray</color>
+    <color name="md_theme_error">@color/danger_red</color>
+    <color name="md_theme_onError">@color/ghost_white</color>
 </resources>

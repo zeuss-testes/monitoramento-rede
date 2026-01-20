@@ -1,4 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@android:color/black" />
-</shape>
+<!-- Background matching dashboard's body background with glows -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Base void color -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#0A0E17" />
+        </shape>
+    </item>
+    
+    <!-- Top right cyan glow (matching dashboard radial-glow-tl) -->
+    <item
+        android:top="-150dp"
+        android:right="-100dp">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#1E00D4FF"
+                android:endColor="#00000000"
+                android:type="radial"
+                android:gradientRadius="250dp" />
+            <size
+                android:width="400dp"
+                android:height="400dp" />
+        </shape>
+    </item>
+    
+    <!-- Bottom left green glow (matching dashboard radial-glow-br) -->
+    <item
+        android:bottom="-100dp"
+        android:left="-100dp">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#1400FF88"
+                android:endColor="#00000000"
+                android:type="radial"
+                android:gradientRadius="200dp" />
+            <size
+                android:width="300dp"
+                android:height="300dp" />
+        </shape>
+    </item>
+    
+</layer-list>

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import dayjs from 'dayjs';
+import { FiServer, FiDatabase, FiClock, FiSmartphone } from 'react-icons/fi';
 import { listDevices, updateDevice, deleteDevice } from '../api/devices.js';
 import SectionHeader from '../components/SectionHeader.jsx';
 import Button from '../components/Button.jsx';
@@ -76,24 +77,41 @@ function DevicesPage() {
         />
       </div>
 
-      <div className="grid gap-4 rounded-3xl border border-white/5 bg-white/5 p-6 shadow-card backdrop-blur">
+      {/* Summary Cards */}
+      <div className="grid gap-4 rounded-2xl glass-card glow-border p-6">
         <div className="grid gap-6 sm:grid-cols-3">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-white/40">Total</p>
-            <p className="mt-2 font-display text-2xl font-semibold text-white">{totals.count}</p>
-            <p className="text-sm text-white/60">Dispositivos cadastrados</p>
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyber-400/10 border border-cyber-400/20">
+              <FiSmartphone className="text-cyber-400" size={22} />
+            </div>
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-steel font-semibold">Total</p>
+              <p className="mt-1 font-display text-3xl font-bold text-ghost">{totals.count}</p>
+              <p className="text-sm text-mist">Dispositivos cadastrados</p>
+            </div>
           </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-white/40">Com franquia</p>
-            <p className="mt-2 font-display text-2xl font-semibold text-white">{totals.withLimit}</p>
-            <p className="text-sm text-white/60">Linhas com limite configurado</p>
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pulse/10 border border-pulse/20">
+              <FiServer className="text-pulse" size={22} />
+            </div>
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-steel font-semibold">Com franquia</p>
+              <p className="mt-1 font-display text-3xl font-bold text-ghost">{totals.withLimit}</p>
+              <p className="text-sm text-mist">Linhas com limite</p>
+            </div>
           </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-white/40">Consumo total</p>
-            <p className="mt-2 font-display text-2xl font-semibold text-white">{formatMegabytes(totals.usage)}</p>
-            <p className="text-sm text-white/60">
-              Atualizado em {dayjs().format('DD/MM/YYYY [às] HH:mm')}
-            </p>
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warning/10 border border-warning/20">
+              <FiDatabase className="text-warning" size={22} />
+            </div>
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-steel font-semibold">Consumo total</p>
+              <p className="mt-1 font-display text-3xl font-bold text-ghost">{formatMegabytes(totals.usage)}</p>
+              <div className="flex items-center gap-1.5 text-sm text-mist">
+                <FiClock size={12} />
+                <span>Atualizado {dayjs().format('HH:mm')}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -125,7 +143,7 @@ function DevicesPage() {
           defaultValues={editDevice}
           submitting={updateMutation.isLoading}
           onCancel={() => setEditDevice(null)}
-          onSubmit={(payload) => updateMutation.mutate({ id: editDevice.imei, payload })}
+          onSubmit={(payload) => updateMutation.mutate({ id: editDevice.id, payload })}
         />
       </Modal>
 
@@ -134,12 +152,12 @@ function DevicesPage() {
         onClose={() => setConfirmDelete(null)}
         title="Remover dispositivo"
       >
-        <div className="space-y-6 text-white/80">
-          <p>
-            Tem certeza que deseja remover o dispositivo <strong>{confirmDelete?.name}</strong>? Todos os registros de
+        <div className="space-y-6">
+          <p className="text-mist">
+            Tem certeza que deseja remover o dispositivo <strong className="text-ghost">{confirmDelete?.name}</strong>? Todos os registros de
             consumo associados serão excluídos.
           </p>
-          <div className="flex justify-end gap-3">
+          <div className="flex justify-end gap-3 pt-4 border-t border-cyber-400/10">
             <Button variant="ghost" onClick={() => setConfirmDelete(null)} disabled={deleteMutation.isLoading}>
               Cancelar
             </Button>

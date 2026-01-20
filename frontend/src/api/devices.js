@@ -14,6 +14,6 @@ export const getDeviceHistory = (deviceId) =>
 export const createDevice = (payload) => api.post('/devices', payload).then((res) => res.data);
 
 export const updateDevice = (deviceId, payload) =>
-  api.put(`/funcionarios/${deviceId}`, payload).then((res) => res.data);
+  api.put(`/devices/${deviceId}`, payload).then((res) => res.data);
 
-export const deleteDevice = (deviceId) => api.delete(`/funcionarios/${deviceId}`).then((res) => res.data);
+export const deleteDevice = (deviceId) => api.delete(`/devices/${deviceId}`).then((res) => res.data);

@@ -15,6 +15,7 @@ object NotificationHelper {
 
     private const val CHANNEL_ID_HIGH_USAGE = "high_usage_alerts"
     private const val CHANNEL_ID_PLAN_LIMIT = "plan_limit_alerts"
+    private const val CHANNEL_ID_MONITORING = "monitoring_channel"
     
     const val NOTIFICATION_ID_HIGH_USAGE_APP = 1001
     const val NOTIFICATION_ID_PLAN_WARNING = 1002
@@ -44,8 +45,21 @@ object NotificationHelper {
                 enableVibration(true)
             }
 
+            // Canal para monitoramento em foreground
+            val monitoringChannel = NotificationChannel(
+                CHANNEL_ID_MONITORING,
+                "Monitoramento de Dados",
+                NotificationManager.IMPORTANCE_LOW
+            ).apply {
+                description = "Serviço de monitoramento contínuo de dados"
+                setShowBadge(false)
+                enableVibration(false)
+                setSound(null, null)
+            }
+
             notificationManager.createNotificationChannel(highUsageChannel)
             notificationManager.createNotificationChannel(planLimitChannel)
+            notificationManager.createNotificationChannel(monitoringChannel)
         }
     }
 

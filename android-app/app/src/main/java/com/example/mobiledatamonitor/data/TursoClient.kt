@@ -289,6 +289,48 @@ class TursoClient(
         }
     }
 
+    suspend fun getDeviceDataLimit(imei: String): Double? = withContext(Dispatchers.IO) {
+        Log.d(TAG, "getDeviceDataLimit: imei=$imei")
+        
+        val sql = "SELECT limite_dados FROM registros_usuarios WHERE imei = ? LIMIT 1"
+        val params = listOf(imei)
+        val result = executeSQL(sql, params)
+        
+        try {
+            if (result != null) {
+                val resultsArr = result.optJSONArray("results")
+                val first = resultsArr?.optJSONObject(0)
+                val response = first?.optJSONObject("response")
+                val resultObj = response?.optJSONObject("result")
+                val rows = resultObj?.optJSONArray("rows")
+
+                if (rows != null && rows.length() > 0) {
+                    // Resposta do pipeline vem como array de arrays: [[{"type":"integer","value":"8500"}]]
+                    val rowArray = rows.optJSONArray(0)
+                    val rowObj = rows.optJSONObject(0)
+
+                    // Se for array de colunas tipadas
+                    val typedValue = rowArray?.optJSONObject(0)?.optString("value")
+                    // Se for objeto com a coluna nomeada
+                    val namedValue = rowObj?.optString("limite_dados")
+
+                    val limit = (typedValue ?: namedValue)?.toDoubleOrNull()
+                    Log.d(TAG, "Limite encontrado: $limit MB (typedValue=$typedValue, namedValue=$namedValue)")
+                    limit
+                } else {
+                    Log.d(TAG, "Nenhum limite encontrado para IMEI $imei")
+                    null
+                }
+            } else {
+                Log.d(TAG, "Erro ao buscar limite no Turso (resultado nulo)")
+                null
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Erro ao processar limite: ${e.message}", e)
+            null
+        }
+    }
+
     suspend fun testConnection(): Boolean = withContext(Dispatchers.IO) {
         try {
             val sql = "SELECT COUNT(*) as count FROM registros_usuarios"

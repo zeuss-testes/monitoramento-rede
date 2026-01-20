@@ -62,10 +62,10 @@ com.example.mobiledatamonitor.app-navigation-common-ktx-2.7.6-60 C:\Users\MarBra
 com.example.mobiledatamonitor.app-navigation-common-2.7.6-61 C:\Users\MarBrasil\.gradle\caches\8.13\transforms\f8639d1cbef77607b4dc3ca699431990\transformed\navigation-common-2.7.6\res
 com.example.mobiledatamonitor.app-core-runtime-2.2.0-62 C:\Users\MarBrasil\.gradle\caches\8.13\transforms\fa48f56823bc06dacdd9b04c5e2458bc\transformed\core-runtime-2.2.0\res
 com.example.mobiledatamonitor.app-sqlite-2.4.0-63 C:\Users\MarBrasil\.gradle\caches\8.13\transforms\fa99b537c76ceb1b4958187e8e370761\transformed\sqlite-2.4.0\res
-com.example.mobiledatamonitor.app-resValues-64 C:\Users\MarBrasil\AndroidStudioProjects\RedeScanDOIS\android-app\app\build\generated\res\resValues\debug
-com.example.mobiledatamonitor.app-updated_navigation_xml-65 C:\Users\MarBrasil\AndroidStudioProjects\RedeScanDOIS\android-app\app\build\generated\updated_navigation_xml\debug
-com.example.mobiledatamonitor.app-packageDebugResources-66 C:\Users\MarBrasil\AndroidStudioProjects\RedeScanDOIS\android-app\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.mobiledatamonitor.app-packageDebugResources-67 C:\Users\MarBrasil\AndroidStudioProjects\RedeScanDOIS\android-app\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.mobiledatamonitor.app-debug-68 C:\Users\MarBrasil\AndroidStudioProjects\RedeScanDOIS\android-app\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.mobiledatamonitor.app-debug-69 C:\Users\MarBrasil\AndroidStudioProjects\RedeScanDOIS\android-app\app\src\debug\res
-com.example.mobiledatamonitor.app-main-70 C:\Users\MarBrasil\AndroidStudioProjects\RedeScanDOIS\android-app\app\src\main\res
+com.example.mobiledatamonitor.app-resValues-64 C:\Users\MarBrasil\AndroidStudioProjects\monitoramento-rede-main\android-app\app\build\generated\res\resValues\debug
+com.example.mobiledatamonitor.app-updated_navigation_xml-65 C:\Users\MarBrasil\AndroidStudioProjects\monitoramento-rede-main\android-app\app\build\generated\updated_navigation_xml\debug
+com.example.mobiledatamonitor.app-packageDebugResources-66 C:\Users\MarBrasil\AndroidStudioProjects\monitoramento-rede-main\android-app\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.mobiledatamonitor.app-packageDebugResources-67 C:\Users\MarBrasil\AndroidStudioProjects\monitoramento-rede-main\android-app\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.mobiledatamonitor.app-debug-68 C:\Users\MarBrasil\AndroidStudioProjects\monitoramento-rede-main\android-app\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.mobiledatamonitor.app-debug-69 C:\Users\MarBrasil\AndroidStudioProjects\monitoramento-rede-main\android-app\app\src\debug\res
+com.example.mobiledatamonitor.app-main-70 C:\Users\MarBrasil\AndroidStudioProjects\monitoramento-rede-main\android-app\app\src\main\res

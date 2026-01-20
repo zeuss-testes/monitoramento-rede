@@ -3,31 +3,76 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="12dp"
-    android:background="@drawable/bg_item_app_limit">
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_item_app_limit"
+    android:gravity="center_vertical">
 
-    <TextView
-        android:id="@+id/app_name"
+    <!-- App Icon placeholder -->
+    <FrameLayout
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_icon_container">
+
+        <ImageView
+            android:id="@+id/app_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:tint="@color/cyber_400" />
+    </FrameLayout>
+
+    <!-- App Info -->
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="16sp"
-        android:textColor="@color/md_theme_onSurface" />
-        
-    <TextView
-        android:id="@+id/time_limit"
+        android:orientation="vertical"
+        android:layout_marginStart="14dp">
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/ghost_white"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/time_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="13sp"
+            android:textColor="@color/mist_gray" />
+    </LinearLayout>
+
+    <!-- Status/Checkbox Area -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:textSize="16sp"
-        android:textColor="@color/md_theme_onSurface" />
-        
-    <CheckBox
-        android:id="@+id/whitelist_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="Whitelist"
-        android:textColor="@color/md_theme_onSurface" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/whitelist_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Whitelist"
+            android:textSize="11sp"
+            android:textColor="@color/steel_gray"
+            android:textAllCaps="true"
+            android:letterSpacing="0.05"
+            android:layout_marginEnd="8dp" />
+
+        <CheckBox
+            android:id="@+id/whitelist_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:buttonTint="@color/cyber_400" />
+    </LinearLayout>
         
 </LinearLayout>

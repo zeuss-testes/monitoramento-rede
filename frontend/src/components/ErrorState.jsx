@@ -1,11 +1,16 @@
+import { FiAlertTriangle } from 'react-icons/fi';
+
 function ErrorState({ message = 'Não foi possível carregar os dados.', onRetry }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-red-500/40 bg-red-500/10 py-12 text-center text-sm text-red-200">
-      <span>{message}</span>
+    <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-danger/30 bg-danger/10 py-12 text-center">
+      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-danger/20 border border-danger/30">
+        <FiAlertTriangle className="text-danger" size={24} />
+      </div>
+      <span className="text-sm text-danger/90">{message}</span>
       {onRetry ? (
         <button
           type="button"
-          className="rounded-full border border-red-400/40 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-red-200 transition hover:bg-red-500/20"
+          className="rounded-lg border border-danger/30 bg-danger/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-danger transition-all hover:bg-danger/20 hover:border-danger/50"
           onClick={onRetry}
         >
           Tentar novamente

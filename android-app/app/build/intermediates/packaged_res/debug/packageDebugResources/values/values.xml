@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="abyss">#1A2342</color>
+    <color name="cyber_100">#B3F8FF</color>
+    <color name="cyber_200">#66F1FF</color>
+    <color name="cyber_300">#1AE8FF</color>
+    <color name="cyber_400">#00D4FF</color>
+    <color name="cyber_400_05">#0D00D4FF</color>
+    <color name="cyber_400_10">#1A00D4FF</color>
+    <color name="cyber_400_15">#2600D4FF</color>
+    <color name="cyber_400_20">#3300D4FF</color>
+    <color name="cyber_400_25">#4000D4FF</color>
+    <color name="cyber_400_30">#4D00D4FF</color>
+    <color name="cyber_50">#E6FDFF</color>
+    <color name="cyber_500">#00B8DB</color>
+    <color name="cyber_600">#0094B8</color>
+    <color name="cyber_700">#006B8A</color>
+    <color name="danger_red">#FF3366</color>
+    <color name="danger_red_dim">#CC2952</color>
+    <color name="deep_space">#0F1628</color>
+    <color name="ghost_white">#E8F4FF</color>
+    <color name="glass_card_bg">#CC0F1628</color>
+    <color name="glass_card_border">#1A00D4FF</color>
     <color name="ic_launcher_background">#1A1A2E</color>
-    <color name="md_theme_background">#000000</color>
-    <color name="md_theme_onBackground">#F8FAFF</color>
-    <color name="md_theme_onPrimary">#FFFFFF</color>
-    <color name="md_theme_onPrimaryContainer">#D7E2FF</color>
-    <color name="md_theme_onSecondary">#0F1729</color>
-    <color name="md_theme_onSurface">#F8FAFF</color>
-    <color name="md_theme_outline">#4C5A75</color>
-    <color name="md_theme_primary">#3677F8</color>
-    <color name="md_theme_primaryContainer">#16316C</color>
-    <color name="md_theme_secondary">#FFB347</color>
-    <color name="md_theme_surface">#11213D</color>
-    <color name="md_theme_surfaceVariant">#1B2D4E</color>
+    <color name="md_theme_background">@color/void_black</color>
+    <color name="md_theme_error">@color/danger_red</color>
+    <color name="md_theme_onBackground">@color/ghost_white</color>
+    <color name="md_theme_onError">@color/ghost_white</color>
+    <color name="md_theme_onPrimary">@color/void_black</color>
+    <color name="md_theme_onPrimaryContainer">@color/cyber_100</color>
+    <color name="md_theme_onSecondary">@color/void_black</color>
+    <color name="md_theme_onSurface">@color/ghost_white</color>
+    <color name="md_theme_outline">@color/steel_gray</color>
+    <color name="md_theme_primary">@color/cyber_400</color>
+    <color name="md_theme_primaryContainer">@color/cyber_700</color>
+    <color name="md_theme_secondary">@color/pulse_green</color>
+    <color name="md_theme_surface">@color/deep_space</color>
+    <color name="md_theme_surfaceVariant">@color/midnight_blue</color>
+    <color name="midnight_blue">#151D35</color>
+    <color name="mist_gray">#8899BB</color>
+    <color name="pulse_green">#00FF88</color>
+    <color name="pulse_green_10">#1A00FF88</color>
+    <color name="pulse_green_20">#3300FF88</color>
+    <color name="pulse_green_30">#4D00FF88</color>
+    <color name="pulse_green_dim">#00CC6A</color>
+    <color name="steel_gray">#5A6A8A</color>
+    <color name="void_black">#0A0E17</color>
+    <color name="warning_amber">#FFAA00</color>
+    <color name="warning_amber_dim">#CC8800</color>
     <string name="app_name">Monitor Dados Móveis</string>
     <string name="download">Recepção</string>
     <string name="grant_permission">Permitir</string>
@@ -32,9 +66,76 @@
     <string name="usage_permission_message">Precisamos da permissão "Acesso a uso" para acompanhar quanto cada rede está consumindo no dispositivo.</string>
     <string name="usage_permission_title">Conceda acesso ao uso</string>
     <string name="wifi_data">Wi‑Fi</string>
+    <style name="TextAppearance.MonitorDados" parent="android:TextAppearance">
+        <item name="android:textColor">@color/ghost_white</item>
+    </style>
+    <style name="TextAppearance.MonitorDados.Label">
+        <item name="android:textColor">@color/steel_gray</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="TextAppearance.MonitorDados.Subtitle">
+        <item name="android:textColor">@color/mist_gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+    <style name="TextAppearance.MonitorDados.Title">
+        <item name="android:textColor">@color/ghost_white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
     <style name="Theme.MobileDataMonitor" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@android:color/black</item>
-        <item name="android:navigationBarColor">@android:color/black</item>
-        <item name="android:windowBackground">@android:color/black</item>
+        
+        <item name="android:statusBarColor">@color/void_black</item>
+        <item name="android:navigationBarColor">@color/void_black</item>
+        <item name="android:windowBackground">@color/void_black</item>
+        
+        
+        <item name="colorPrimary">@color/cyber_400</item>
+        <item name="colorPrimaryDark">@color/cyber_600</item>
+        <item name="colorAccent">@color/pulse_green</item>
+        
+        
+        <item name="android:textColor">@color/ghost_white</item>
+        <item name="android:textColorPrimary">@color/ghost_white</item>
+        <item name="android:textColorSecondary">@color/mist_gray</item>
+        <item name="android:textColorHint">@color/steel_gray</item>
+        
+        
+        <item name="android:buttonStyle">@style/Widget.MonitorDados.Button</item>
+        
+        
+        <item name="android:editTextStyle">@style/Widget.MonitorDados.EditText</item>
+        
+        
+        <item name="android:listDivider">@color/cyber_400_10</item>
+    </style>
+    <style name="Widget.MonitorDados" parent="android:Widget">
+    </style>
+    <style name="Widget.MonitorDados.Button" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="android:textColor">@color/void_black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+    <style name="Widget.MonitorDados.Card">
+        <item name="android:background">@drawable/bg_surface_card</item>
+        <item name="android:padding">20dp</item>
+    </style>
+    <style name="Widget.MonitorDados.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_input_field</item>
+        <item name="android:textColor">@color/ghost_white</item>
+        <item name="android:textColorHint">@color/steel_gray</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

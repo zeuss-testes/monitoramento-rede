@@ -4,8 +4,10 @@ export const formatMegabytes = (value) => {
     return '0 MB';
   }
 
-  if (num >= 1024) {
-    return `${(num / 1024).toFixed(2)} GB`;
+  // Operadoras e valores do Turso usam base decimal (1000),
+  // então mantemos a divisão por 1000 para evitar perder ~200MB na exibição.
+  if (num >= 1000) {
+    return `${(num / 1000).toFixed(2)} GB`;
   }
 
   return `${num.toFixed(0)} MB`;

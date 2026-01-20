@@ -1,7 +1,7 @@
 package com.example.mobiledatamonitor.data
 
 data class DataPlanSettings(
-    val monthlyLimitBytes: Long = 7L * 1024 * 1024 * 1024, // 7GB padrão
+    val monthlyLimitBytes: Long = 7_000_000_000L, // 7GB padrão (decimal)
     val billingCycleStartDay: Int = 1 // Dia do mês que o ciclo começa
 ) {
     companion object {

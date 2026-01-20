@@ -179,6 +179,7 @@ async function initializeSchema(clientInstance) {
       nome TEXT NOT NULL,
       numero TEXT NOT NULL,
       consumo_total REAL NOT NULL DEFAULT 0,
+      limite_dados REAL DEFAULT 7000,
       created_at NUMERIC DEFAULT CURRENT_TIMESTAMP,
       dados_apps_json TEXT
     )`
@@ -192,6 +193,13 @@ async function initializeSchema(clientInstance) {
   // Garantir coluna dados_apps_json (tabelas antigas podem não ter)
   try {
     await clientInstance.execute(`ALTER TABLE registros_usuarios ADD COLUMN dados_apps_json TEXT`);
+  } catch (err) {
+    // Ignora erro de coluna já existente
+  }
+
+  // Garantir coluna limite_dados com valor padrão 7000 (tabelas antigas podem não ter)
+  try {
+    await clientInstance.execute(`ALTER TABLE registros_usuarios ADD COLUMN limite_dados REAL DEFAULT 7000`);
   } catch (err) {
     // Ignora erro de coluna já existente
   }
@@ -220,6 +228,7 @@ function initializeLocalSchema(dbInstance) {
       nome TEXT NOT NULL,
       numero TEXT NOT NULL,
       consumo_total REAL NOT NULL DEFAULT 0,
+      limite_dados REAL DEFAULT 7000,
       created_at NUMERIC DEFAULT CURRENT_TIMESTAMP,
       dados_apps_json TEXT
     )`

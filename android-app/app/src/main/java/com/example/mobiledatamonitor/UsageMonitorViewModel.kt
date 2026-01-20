@@ -2,9 +2,11 @@ package com.example.mobiledatamonitor
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mobiledatamonitor.data.TursoClient
+import com.example.mobiledatamonitor.data.BackendClient
 import com.example.mobiledatamonitor.data.BackendSyncHelper
 import com.example.mobiledatamonitor.data.DataPlanSettings
 import com.example.mobiledatamonitor.data.DataUsageRepository
@@ -27,7 +29,9 @@ class UsageMonitorViewModel(application: Application) : AndroidViewModel(applica
     private val appContext = application.applicationContext
     private val repository = DataUsageRepository(application)
     private val prefs = application.getSharedPreferences("data_monitor_prefs", Context.MODE_PRIVATE)
+    private val PREF_SAVED_LIMIT = "pref_monthly_limit_bytes"
     private val tursoClient = TursoClient(appContext, prefs)
+    private val backendClient = BackendClient(appContext, prefs)
     private val userManager = UserManager(prefs)
 
     private val _state = MutableStateFlow(UsageMonitorState())
@@ -37,10 +41,62 @@ class UsageMonitorViewModel(application: Application) : AndroidViewModel(applica
 
     init {
         refreshPermissions()
+        loadSavedLimit()
         refreshUsage(force = true)
         scheduleAutoRefresh()
         registerDeviceWithBackend()
         loadEmployeeProfile()
+        loadDataLimitFromBackend()
+    }
+
+    private fun loadSavedLimit() {
+        val savedLimit = prefs.getLong(PREF_SAVED_LIMIT, -1)
+        if (savedLimit > 0) {
+            _state.update {
+                it.copy(dataPlanSettings = it.dataPlanSettings.copy(monthlyLimitBytes = savedLimit))
+            }
+            Log.d("ViewModel", "Limite carregado do cache: ${savedLimit / 1_000_000.0}MB")
+        }
+    }
+
+    private fun loadDataLimitFromBackend() {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val employee = userManager.getCurrentEmployee()
+                val imei = employee?.customImei
+                
+                if (!imei.isNullOrBlank()) {
+                    // Tenta obter do backend local primeiro
+                    val limitMB = backendClient.getDeviceDataLimit(imei)
+                    if (limitMB != null && limitMB > 0) {
+                        val limitBytes = (limitMB * 1_000_000).toLong()
+                        _state.update { 
+                            it.copy(dataPlanSettings = it.dataPlanSettings.copy(monthlyLimitBytes = limitBytes))
+                        }
+                        prefs.edit().putLong(PREF_SAVED_LIMIT, limitBytes).apply()
+                        Log.d("ViewModel", "Limite atualizado do backend local: ${limitMB}MB")
+                        refreshDataPlanStatus()
+                    } else {
+                        // Fallback para Turso se backend falhar
+                        Log.d("ViewModel", "Backend falhou, tentando Turso...")
+                        val tursoLimit = tursoClient.getDeviceDataLimit(imei)
+                        if (tursoLimit != null) {
+                            val limitBytes = (tursoLimit * 1_000_000).toLong()
+                            _state.update { 
+                                it.copy(dataPlanSettings = it.dataPlanSettings.copy(monthlyLimitBytes = limitBytes))
+                            }
+                            prefs.edit().putLong(PREF_SAVED_LIMIT, limitBytes).apply()
+                            Log.d("ViewModel", "Limite atualizado do Turso (fallback): ${tursoLimit}MB")
+                            refreshDataPlanStatus()
+                        }
+                    }
+                } else {
+                    Log.w("ViewModel", "IMEI não encontrado para o funcionário atual")
+                }
+            } catch (e: Exception) {
+                Log.e("ViewModel", "Erro ao carregar limite do backend: ${e.message}", e)
+            }
+        }
     }
 
     fun onRangeSelected(range: UsageRange) {
@@ -50,14 +106,6 @@ class UsageMonitorViewModel(application: Application) : AndroidViewModel(applica
 
     fun onTabSelected(tabIndex: Int) {
         _state.update { it.copy(selectedTab = tabIndex) }
-    }
-
-    fun updateDataPlanLimit(limitGB: Float) {
-        val limitBytes = (limitGB * 1024 * 1024 * 1024).toLong()
-        _state.update { 
-            it.copy(dataPlanSettings = it.dataPlanSettings.copy(monthlyLimitBytes = limitBytes))
-        }
-        refreshDataPlanStatus()
     }
 
     fun refreshUsage(force: Boolean = false) {
@@ -160,6 +208,7 @@ class UsageMonitorViewModel(application: Application) : AndroidViewModel(applica
             while (true) {
                 delay(10_000)
                 refreshUsage(force = true)
+                loadDataLimitFromBackend() // Atualiza limite periodicamente
             }
         }
     }

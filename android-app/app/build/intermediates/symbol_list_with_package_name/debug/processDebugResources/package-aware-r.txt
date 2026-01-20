@@ -382,6 +382,7 @@ color abc_tint_edittext
 color abc_tint_seek_thumb
 color abc_tint_spinner
 color abc_tint_switch_track
+color abyss
 color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
@@ -400,6 +401,23 @@ color button_material_dark
 color button_material_light
 color call_notification_answer_color
 color call_notification_decline_color
+color cyber_100
+color cyber_200
+color cyber_300
+color cyber_400
+color cyber_400_05
+color cyber_400_10
+color cyber_400_15
+color cyber_400_20
+color cyber_400_25
+color cyber_400_30
+color cyber_50
+color cyber_500
+color cyber_600
+color cyber_700
+color danger_red
+color danger_red_dim
+color deep_space
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -408,6 +426,9 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color ghost_white
+color glass_card_bg
+color glass_card_border
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
@@ -424,7 +445,9 @@ color material_grey_800
 color material_grey_850
 color material_grey_900
 color md_theme_background
+color md_theme_error
 color md_theme_onBackground
+color md_theme_onError
 color md_theme_onPrimary
 color md_theme_onPrimaryContainer
 color md_theme_onSecondary
@@ -435,6 +458,8 @@ color md_theme_primaryContainer
 color md_theme_secondary
 color md_theme_surface
 color md_theme_surfaceVariant
+color midnight_blue
+color mist_gray
 color notification_action_color_filter
 color notification_icon_bg_color
 color primary_dark_material_dark
@@ -445,12 +470,18 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color pulse_green
+color pulse_green_10
+color pulse_green_20
+color pulse_green_30
+color pulse_green_dim
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color steel_gray
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -461,6 +492,9 @@ color tooltip_background_dark
 color tooltip_background_light
 color vector_tint_color
 color vector_tint_theme_color
+color void_black
+color warning_amber
+color warning_amber_dim
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -667,7 +701,15 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable bg_app_gradient
+drawable bg_button_danger
+drawable bg_button_primary
+drawable bg_button_secondary
+drawable bg_divider_gradient
+drawable bg_icon_container
+drawable bg_input_field
 drawable bg_item_app_limit
+drawable bg_security_badge
+drawable bg_status_dot_pulse
 drawable bg_surface_card
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -762,6 +804,7 @@ id add
 id alertTitle
 id always
 id androidx_compose_ui_view_composition_context
+id app_icon
 id app_list
 id app_name
 id async
@@ -773,6 +816,7 @@ id center_vertical
 id checkbox
 id checked
 id chronometer
+id clear_log_btn
 id collapseActionView
 id compose_view_saveable_id_tag
 id consume_window_insets_tag
@@ -815,6 +859,7 @@ id line1
 id line3
 id listMode
 id list_item
+id log_text
 id message
 id middle
 id multiply
@@ -882,6 +927,8 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id test_connection_btn
+id test_limits_btn
 id text
 id text2
 id textSpacerNoButtons
@@ -904,6 +951,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible_removing_fragment_view_tag
 id whitelist_checkbox
+id whitelist_label
 id withText
 id wrap_content
 id wrapped_composition_tag
@@ -947,6 +995,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_backend_test
 layout activity_edit_app_limit
 layout activity_employee_setup
 layout activity_password
@@ -1342,6 +1391,10 @@ style TextAppearance_Compat_Notification_Info
 style TextAppearance_Compat_Notification_Line2
 style TextAppearance_Compat_Notification_Time
 style TextAppearance_Compat_Notification_Title
+style TextAppearance_MonitorDados
+style TextAppearance_MonitorDados_Label
+style TextAppearance_MonitorDados_Subtitle
+style TextAppearance_MonitorDados_Title
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
@@ -1452,6 +1505,10 @@ style Widget_AppCompat_Toolbar
 style Widget_AppCompat_Toolbar_Button_Navigation
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
+style Widget_MonitorDados
+style Widget_MonitorDados_Button
+style Widget_MonitorDados_Card
+style Widget_MonitorDados_EditText
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

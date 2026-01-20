@@ -1,31 +1,15 @@
 [
     {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\layout_activity_password.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_password.xml"
-    },
-    {
-        "merged": "com.example.mobiledatamonitor.app-debug-68:/layout_activity_employee_setup.xml.flat",
-        "source": "com.example.mobiledatamonitor.app-main-70:/layout/activity_employee_setup.xml"
-    },
-    {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-xxhdpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-xxhdpi\\ic_launcher.xml"
-    },
-    {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\layout_activity_employee_setup.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_employee_setup.xml"
-    },
-    {
         "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-mdpi_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-mdpi\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\layout_activity_edit_app_limit.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_edit_app_limit.xml"
-    },
-    {
         "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\layout_activity_settings.xml.flat",
         "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_status_dot_pulse.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_status_dot_pulse.xml"
     },
     {
         "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-mdpi_ic_launcher.xml.flat",
@@ -36,28 +20,12 @@
         "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-xhdpi\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_app_gradient.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_app_gradient.xml"
-    },
-    {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-hdpi_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-hdpi\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\layout_item_app_limit.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\item_app_limit.xml"
-    },
-    {
         "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_item_app_limit.xml.flat",
         "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_item_app_limit.xml"
     },
     {
         "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-xxxhdpi_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-xxxhdpi\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\xml\\backup_rules.xml"
     },
     {
         "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\xml_data_extraction_rules.xml.flat",
@@ -72,19 +40,83 @@
         "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_surface_card.xml"
     },
     {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-hdpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-hdpi\\ic_launcher.xml"
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_security_badge.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_security_badge.xml"
     },
     {
-        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-xxxhdpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-xxxhdpi\\ic_launcher.xml"
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-hdpi\\ic_launcher.xml"
     },
     {
         "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-xxhdpi_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-xxhdpi\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_button_primary.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_button_primary.xml"
+    },
+    {
         "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\layout_activity_password.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-xxhdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-xxhdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\layout_activity_employee_setup.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_employee_setup.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\layout_activity_edit_app_limit.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\activity_edit_app_limit.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_icon_container.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_icon_container.xml"
+    },
+    {
+        "merged": "com.example.mobiledatamonitor.app-debug-68:/layout_activity_backend_test.xml.flat",
+        "source": "com.example.mobiledatamonitor.app-main-70:/layout/activity_backend_test.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_app_gradient.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_app_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-hdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\layout_item_app_limit.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\layout\\item_app_limit.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_input_field.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_input_field.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_divider_gradient.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_divider_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_button_secondary.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_button_secondary.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\mipmap-xxxhdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\mipmap-xxxhdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-debug-68:\\drawable_bg_button_danger.xml.flat",
+        "source": "C:\\Users\\MarBrasil\\.gradle\\daemon\\8.13\\com.example.mobiledatamonitor.app-main-70:\\drawable\\bg_button_danger.xml"
     }
 ]

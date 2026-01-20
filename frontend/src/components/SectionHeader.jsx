@@ -1,13 +1,13 @@
-function SectionHeader({ title, subtitle, action }) {
+function SectionHeader({ title, subtitle }) {
   return (
     <div>
-      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <h2 className="font-display text-2xl font-semibold tracking-tight text-white">{title}</h2>
-          {subtitle ? <p className="mt-2 text-sm text-white/60">{subtitle}</p> : null}
-        </div>
-        {action ? <div className="flex-shrink-0">{action}</div> : null}
+      <div className="flex items-center gap-3 mb-2">
+        <div className="h-4 w-1 rounded-full bg-gradient-to-b from-cyber-400 to-pulse" />
+        <h2 className="font-display text-xl font-bold text-ghost sm:text-2xl">{title}</h2>
       </div>
+      {subtitle ? (
+        <p className="text-sm text-mist leading-relaxed ml-4">{subtitle}</p>
+      ) : null}
     </div>
   );
 }

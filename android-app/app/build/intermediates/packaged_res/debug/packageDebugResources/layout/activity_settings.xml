@@ -3,22 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     android:background="@drawable/bg_app_gradient">
 
-    <TextView
+    <!-- Header -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aplicativos Monitorados"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/md_theme_onBackground"
-        android:paddingBottom="8dp" />
-        
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@color/cyber_400_10">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:background="@color/cyber_400" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Aplicativos Monitorados"
+                android:textSize="20sp"
+                android:textColor="@color/ghost_white"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="-0.01" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:text="Gerencie limites de tempo e permissões de aplicativos"
+            android:textSize="13sp"
+            android:textColor="@color/mist_gray"
+            android:lineSpacingMultiplier="1.3" />
+
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cyber_400_10" />
+
+    <!-- Apps List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/app_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp" />
-        
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false" />
+
 </LinearLayout>

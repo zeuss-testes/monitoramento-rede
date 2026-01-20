@@ -44,24 +44,34 @@ router.get('/overview', async (req, res, next) => {
               f.nome,
               f.numero,
               f.consumo_total,
+              f.limite_dados,
               f.created_at
        FROM registros_usuarios f
        ORDER BY f.nome ASC`,
       []
     );
 
-    const devices = rows.map((row) => ({
-      id: row.id,
-      imei: row.imei,
-      name: row.nome,
-      numero: row.numero,
-      consumoTotal: parseNumber(row.consumo_total),
-      usage: {
-        totalMb: parseNumber(row.consumo_total),
-      },
-    }));
+    const devices = rows.map((row) => {
+      const limitMb = parseNumber(row.limite_dados);
+
+      return {
+        id: row.id,
+        imei: row.imei,
+        name: row.nome,
+        numero: row.numero,
+        consumoTotal: parseNumber(row.consumo_total),
+        dataLimitMb: limitMb,
+        limite_dados: limitMb, // compatibilidade com nome da coluna
+        usage: {
+          totalMb: parseNumber(row.consumo_total),
+        },
+      };
+    });
 
     const totalUsage = devices.reduce((sum, item) => sum + parseNumber(item.usage.totalMb), 0);
+    const devicesWithLimit = devices.filter((item) => Number.isFinite(item.dataLimitMb) && item.dataLimitMb > 0);
+    const totalLimit = devicesWithLimit.reduce((sum, item) => sum + parseNumber(item.dataLimitMb), 0);
+    const averageLimitMb = devicesWithLimit.length ? totalLimit / devicesWithLimit.length : null;
 
     res.json({
       range: {
@@ -72,6 +82,7 @@ router.get('/overview', async (req, res, next) => {
         devices: devices.length,
         usageMb: totalUsage,
         averageUsagePerDeviceMb: devices.length ? totalUsage / devices.length : 0,
+        averageLimitMb,
       },
       devices,
     });

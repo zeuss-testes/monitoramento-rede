@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,6 +22,9 @@ public final class ItemAppLimitBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ImageView appIcon;
+
+  @NonNull
   public final TextView appName;
 
   @NonNull
@@ -29,12 +33,18 @@ public final class ItemAppLimitBinding implements ViewBinding {
   @NonNull
   public final CheckBox whitelistCheckbox;
 
-  private ItemAppLimitBinding(@NonNull LinearLayout rootView, @NonNull TextView appName,
-      @NonNull TextView timeLimit, @NonNull CheckBox whitelistCheckbox) {
+  @NonNull
+  public final TextView whitelistLabel;
+
+  private ItemAppLimitBinding(@NonNull LinearLayout rootView, @NonNull ImageView appIcon,
+      @NonNull TextView appName, @NonNull TextView timeLimit, @NonNull CheckBox whitelistCheckbox,
+      @NonNull TextView whitelistLabel) {
     this.rootView = rootView;
+    this.appIcon = appIcon;
     this.appName = appName;
     this.timeLimit = timeLimit;
     this.whitelistCheckbox = whitelistCheckbox;
+    this.whitelistLabel = whitelistLabel;
   }
 
   @Override
@@ -64,6 +74,12 @@ public final class ItemAppLimitBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.app_icon;
+      ImageView appIcon = ViewBindings.findChildViewById(rootView, id);
+      if (appIcon == null) {
+        break missingId;
+      }
+
       id = R.id.app_name;
       TextView appName = ViewBindings.findChildViewById(rootView, id);
       if (appName == null) {
@@ -82,8 +98,14 @@ public final class ItemAppLimitBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemAppLimitBinding((LinearLayout) rootView, appName, timeLimit,
-          whitelistCheckbox);
+      id = R.id.whitelist_label;
+      TextView whitelistLabel = ViewBindings.findChildViewById(rootView, id);
+      if (whitelistLabel == null) {
+        break missingId;
+      }
+
+      return new ItemAppLimitBinding((LinearLayout) rootView, appIcon, appName, timeLimit,
+          whitelistCheckbox, whitelistLabel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

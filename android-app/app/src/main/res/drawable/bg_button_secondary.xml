@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Secondary/ghost button matching dashboard's variant ghost styling -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#2600D4FF">
+    
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Background matching dashboard's bg-cyber-400/10 -->
+            <solid android:color="#1A00D4FF" />
+            <!-- Border matching dashboard's border-cyber-400/30 -->
+            <stroke
+                android:width="1dp"
+                android:color="#4D00D4FF" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+</ripple>

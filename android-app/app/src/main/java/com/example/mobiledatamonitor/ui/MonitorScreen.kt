@@ -107,7 +107,7 @@ fun MonitorScreen(
                                 )
                             }
                             Text(
-                                text = "Limite: 7GB | Consumo por app",
+                                text = "Limite: ${"%.1f".format(state.dataPlanSettings.monthlyLimitBytes / 1_000_000_000f)}GB | Consumo por app",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                             )
@@ -556,7 +556,7 @@ private fun DataPlanSummaryCard(status: DataPlanStatus) {
                         color = Color.White
                     )
                     Text(
-                        text = "Limite: %.1f GB".format(status.limitGB),
+                        text = "Limite: %.1f GB".format(status.limitBytes.toDouble() / 1_000_000_000.0),
                         style = MaterialTheme.typography.bodySmall,
                         color = Color.White
                     )
@@ -892,8 +892,9 @@ private fun DataPlanDetailCard(status: DataPlanStatus) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            val limitGb = status.limitBytes.toDouble() / 1_000_000_000.0
             Text(
-                text = "Seu Plano: 7 GB",
+                text = "Seu Plano: %.1f GB".format(limitGb),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
                 color = Color.White

@@ -1,6 +1,7 @@
 package com.example.mobiledatamonitor
 
 import android.Manifest
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,7 +17,6 @@ import com.example.mobiledatamonitor.notifications.NotificationHelper
 import com.example.mobiledatamonitor.permissions.openUsageAccessSettings
 import com.example.mobiledatamonitor.ui.MonitorScreen
 import com.example.mobiledatamonitor.ui.theme.MobileDataMonitorTheme
-import com.example.mobiledatamonitor.worker.WorkManagerHelper
 
 class MainActivity : ComponentActivity() {
 
@@ -28,10 +28,23 @@ class MainActivity : ComponentActivity() {
         // Criar canais de notificação
         NotificationHelper.createNotificationChannels(this)
         
-        // Agendar monitoramento em background
-        android.util.Log.d("MainActivity", "Agendando WorkManager...")
-        WorkManagerHelper.scheduleDataUsageMonitoring(this)
-        android.util.Log.d("MainActivity", "WorkManager agendado")
+        // Agendar sincronização periódica com WorkManager
+        android.util.Log.d("MainActivity", "Agendando sincronização periódica...")
+        SyncManager.schedulePeriodicSync(this)
+        android.util.Log.d("MainActivity", "Sincronização periódica agendada")
+        
+        // Iniciar serviço de monitoramento em foreground
+        try {
+            val serviceIntent = Intent(this, AppMonitoringService::class.java)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(serviceIntent)
+            } else {
+                startService(serviceIntent)
+            }
+            android.util.Log.d("MainActivity", "Serviço de monitoramento iniciado")
+        } catch (e: Exception) {
+            android.util.Log.e("MainActivity", "Erro ao iniciar serviço: ${e.message}", e)
+        }
 
         // Solicitar permissão de notificação no Android 13+
         requestNotificationPermission()

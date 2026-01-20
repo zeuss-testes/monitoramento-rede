@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icon container matching dashboard's icon container style -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    
+    <!-- Gradient background matching dashboard's from-cyber-400/10 to-cyber-600/10 -->
+    <gradient
+        android:startColor="#1A00D4FF"
+        android:centerColor="#150094B8"
+        android:endColor="#1000FF88"
+        android:angle="135"
+        android:type="linear" />
+    
+    <!-- Border matching dashboard's border-cyber-400/20 -->
+    <stroke
+        android:width="1dp"
+        android:color="#3300D4FF" />
+    
+    <corners android:radius="16dp" />
+</shape>
